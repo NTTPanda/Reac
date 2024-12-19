@@ -1,0 +1,15 @@
+/* App.css */
+.box {
+  width: 602px;
+  height: 412px;
+  /* background: linear-gradient(to bottom, #2F2F2F, #000000); */
+  background-color: aqua;
+  font-size: 18px;
+
+
+  /* Flexbox to stack items */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Distribute space between children */
+  align-items: center; /* Center children horizontally */
+}

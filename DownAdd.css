@@ -1,0 +1,58 @@
+
+  /* Top container styling */
+  .downadd-top {
+    width: 602px;
+    height: 76px;
+    display: flex;
+    flex-direction: column; /* Ensures label and content are stacked */
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #ffffff;
+
+    box-sizing: border-box;
+  }
+  
+  /* Image styling */
+  .downadd-image {
+    /* width: 40px; */
+    height: 52px;
+    /* object-fit: cover; */
+    display: block;
+    background-color: black;
+    border-radius: 4px 0 0 4px; 
+}
+  
+  /* Content container (row layout for image and input) */
+  .downadd-content {
+    display: flex;
+    flex-direction: row; /* Image and input in the same row */
+    align-items: center;
+    width: 100%; /* Full width to match parent */
+    border-radius: 4px ;
+  }
+  
+  /* Label styling */
+  .downadd-label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%; /* Label takes full width */
+  }
+  
+  /* Input field styling */
+  .downadd-input {
+    width: calc(100% - 30px); /* Full width minus image width */
+    height: 47px;
+    /* border: 1px solid #ccc; */
+    border-top-left-radius: 0; /* No top-left radius */
+    border-bottom-left-radius: 0; /* No bottom-left radius */
+    border-top-right-radius: 4px; /* Keep the right-side rounded if needed */
+    border-bottom-right-radius: 4px; /* Keep the right-side rounded if needed */
+    font-size: 20px;
+    text-align: left;
+    color: #ffffff;
+    /* box-sizing: border-box; */
+    background-color: black; /* Set background color */
+    outline: none; /* Remove default blue outline on focus */
+  }
+  
