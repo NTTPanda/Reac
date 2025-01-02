@@ -1,33 +1,45 @@
-import React from "react";
-import "./App.css"; // Import the CSS file
-import DownAdd from "./DownAdd"; // Import DownAdd component
-import RohitPhoto from "./images/Globe.png";
-import Drop from "./Drop";
-
+import React, { useState } from "react";
+import GrayBlackBox from "./GrayBlackBox"; // Import the GrayBlackBox component
+import "./App.css"; // Optional: For styling the button or layout
+import ReadXML from "./ReadXML";
 
 function App() {
-  const dropdownOptions = [
-    { value: "option1", label: "Option 1" },
-    { value: "option2", label: "Option 2" },
-    { value: "option3", label: "Option 3" },
-  ];
+  const [showBox, setShowBox] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowBox(!showBox); // Toggle the visibility of GrayBlackBox
+  };
+
+// Function to process data
+const handleDataReady = ({ names, models, pairs }) => {
+  console.log("Names:", names[0]);
+  console.log("Names:", names[1]);
+  console.log("Names:", names[2]);
+  console.log("Names:", names[3]);
+};
   return (
-    <>
-      <div className="box">
-      <DownAdd
-  labelText="IP"
-  placeholderText="0.0.0.0"
-  imagePath={RohitPhoto}
-/>
-      </div>
-
-
-      <Drop
-        labelText="Select an Option"
-        options={dropdownOptions}
-      />
-    </>
+    <div className="app-container">
+      <button className="toggle-button" onClick={handleButtonClick}>
+        {showBox ? "Hide Gray Black Box" : "Show Gray Black Box"}
+      </button>
+      {showBox && <GrayBlackBox />} 
+      <ReadXML onDataReady={handleDataReady} />
+    </div>
   );
 }
 
 export default App;
+
+
+// const array=["Name1","Name2","Name3","Name4"]
+// const generateObject = (arr) => {
+//   const obj = {};
+//   arr.forEach((value, index) => {
+//     obj[`Option${index + 1}`] = value;
+//   });
+//   return obj;
+// };
+
+// // Usage is the same as above
+// let obj = generateObject(array);
+// console.log(obj);
